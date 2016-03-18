@@ -9,7 +9,7 @@ public class StareDetection : MonoBehaviour {
 	private Vector3 currentDestination,newDestination; 
 	public Image LoadingCursorL,LoadingCursorR;
 	private int currentIndex;
-	private bool selectedTaken;//selectedTaken is true during travels, remove it causes u to stop mid travel
+	private bool selectedTaken;//selectedTaken is true during travels, removing it ables u 2 change destination while travelling
 
 	void Start () {
 		coolDown = 2.0f;
