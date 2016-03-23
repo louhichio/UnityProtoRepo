@@ -14,6 +14,14 @@ namespace Quinq
 		#endregion
 
 		#region Unity
+//		void OnDrawGizmosSelected() 
+//		{
+//			cam = Camera.main.transform;
+//			Gizmos.color = Color.blue;
+//			Gizmos.DrawLine(transform.position, Vector3.Normalize(cam.rotation * Vector3.forward) * 100);
+//			print (Vector3.Normalize (cam.rotation * Vector3.forward));
+//		}
+
 		void Start () 
 		{
 			rb = this.GetComponent<Rigidbody> ();	
@@ -33,12 +41,14 @@ namespace Quinq
 			float h = Input.GetAxis ("Horizontal");
 			float v = Input.GetAxis ("Vertical");
 
-//			Vector3 camDir = new Vector3 (cam.rotation.x * h, 0, cam.rotation.z * v).normalized;
-//			print (camDir);
-//			Vector3 force = new Vector3 (h * camDir.x, 0, v * camDir.z);
-//			force = transform.TransformDirection (force);
-			Vector3 forward = Vector3.Normalize(cam.rotation * Vector3.forward) * v;
-			Vector3 right = Vector3.Normalize(cam.rotation * Vector3.right) * h;
+			Vector3 forward = Vector3.Normalize(cam.rotation * Vector3.forward);
+			forward.y = 0;
+			forward *= v;
+
+			Vector3 right = Vector3.Normalize(cam.rotation * Vector3.right);
+			right.y = 0;
+			right *= h;
+
 			transform.position += (forward + right) * Time.deltaTime * speed;
 
 			// Jump 

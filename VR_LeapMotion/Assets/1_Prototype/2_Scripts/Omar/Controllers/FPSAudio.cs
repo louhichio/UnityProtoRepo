@@ -1,15 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections;
 
-public class FPSAudio : MonoBehaviour {
+namespace Quinq
+{
+	public class FPSAudio : Singleton<FPSAudio> 
+	{
+		#region Properties
+		public AudioSource audioSource;
+		public AudioClip audioClip;
+		#endregion
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		#region Public
+		public void PlayGunAudio()
+		{
+			audioSource.PlayOneShot (audioClip);
+		}
+		#endregion
 	}
 }

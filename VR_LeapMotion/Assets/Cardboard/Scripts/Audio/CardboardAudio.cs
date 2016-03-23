@@ -77,9 +77,9 @@ public static class CardboardAudio {
       listenerTransform = listener.transform;
       initialized = true;
 
-      Debug.Log("Cardboard audio system is initialized (Quality: " + quality + ", Sample Rate: " +
-                sampleRate + ", Channels: " + numChannels + ", Frames Per Buffer: " +
-                framesPerBuffer + ").");
+//      Debug.Log("Cardboard audio system is initialized (Quality: " + quality + ", Sample Rate: " +
+//                sampleRate + ", Channels: " + numChannels + ", Frames Per Buffer: " +
+//                framesPerBuffer + ").");
     } else if (listener.transform != listenerTransform) {
       Debug.LogError("Only one CardboardAudioListener component is allowed in the scene.");
       CardboardAudioListener.Destroy(listener);
@@ -97,7 +97,7 @@ public static class CardboardAudio {
       numChannels = -1;
       framesPerBuffer = -1;
 
-      Debug.Log("Cardboard audio system is shutdown.");
+//      Debug.Log("Cardboard audio system is shutdown.");
     }
   }
 

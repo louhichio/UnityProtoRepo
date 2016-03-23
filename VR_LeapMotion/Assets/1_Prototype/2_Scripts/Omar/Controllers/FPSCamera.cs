@@ -5,15 +5,10 @@ namespace Quinq
 {
 	public class FPSCamera : Singleton<FPSCamera> 
 	{
-		public Transform player;
-		public float height;
+		#region Properties
+		#endregion
 
-		void FixedUpdate () 
-		{
-			if(player)
-			{
-				this.transform.transform.position = player.transform.position + Vector3.up * height;
-			}
-		}
+		#region Unity
+		#endregion
 	}
 }
